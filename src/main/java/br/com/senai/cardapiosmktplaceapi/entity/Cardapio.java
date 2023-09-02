@@ -65,7 +65,5 @@ public class Cardapio {
 	public boolean isAtivo() {
 		return getStatus() == Status.A;
 	}
-
-	
 	
 }

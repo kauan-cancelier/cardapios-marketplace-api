@@ -15,6 +15,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotNull;
@@ -67,6 +68,15 @@ public class OpcaoDoCardapio {
 		this.status = Status.A;
 	}
 	
+	@Transient
+	public boolean isPersistido() {
+		return getId() != null && getId().getIdDaOpcao() > 0
+				&& getId().getIdDoCardapio() > 0;
+	}
 	
+	@Transient
+	public boolean isAtivo() {
+		return getStatus() == Status.A;
+	}
 	
 }
