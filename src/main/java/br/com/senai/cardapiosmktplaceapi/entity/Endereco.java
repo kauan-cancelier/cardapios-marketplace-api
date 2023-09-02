@@ -27,4 +27,5 @@ public class Endereco {
 	
 	@Column(name = "complemento")
 	private String complemento;
+	
 }
