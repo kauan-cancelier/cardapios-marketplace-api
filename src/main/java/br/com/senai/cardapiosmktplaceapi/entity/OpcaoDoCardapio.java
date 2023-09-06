@@ -40,6 +40,7 @@ public class OpcaoDoCardapio {
 	private Cardapio cardapio;
 	
 	@JoinColumn(name = "id_opcao")
+	@MapsId("idDaOpcao")
 	@ManyToOne(fetch = FetchType.LAZY)
 	@NotNull(message = "A opção da opção do cardápio é obrigatória")
 	private Opcao opcao;

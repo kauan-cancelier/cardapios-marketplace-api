@@ -43,4 +43,10 @@ public interface RestaurantesRepository extends JpaRepository<Restaurante, Integ
 			+ "WHERE r.id = :id")
 	public void atualizarPor(Integer id, Status status);
 	
+	@Query(value = 
+			"SELECT Count(r) "
+			+ "FROM Restaurante r "
+			+ "WHERE r.categoria.id = :idDaCategoria")
+	public Long contarPor(Integer idDaCategoria);
+	
 }
