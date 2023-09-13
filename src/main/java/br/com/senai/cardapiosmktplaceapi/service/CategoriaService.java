@@ -15,7 +15,6 @@ import jakarta.validation.constraints.Size;
 @Validated
 public interface CategoriaService {
 	
-	
 	public Categoria salvar(
 			@NotNull(message = "A categoria é obrigatória")
 			Categoria categoria);
