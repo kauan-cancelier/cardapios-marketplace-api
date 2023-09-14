@@ -69,7 +69,7 @@ public class OpcaoDoCardapio {
 	@ToString.Exclude
 	private Secao secao;
 	
-	private OpcaoDoCardapio() {
+	public OpcaoDoCardapio() {
 		this.status = Status.A;
 	}
 	
@@ -83,5 +83,6 @@ public class OpcaoDoCardapio {
 	public boolean isAtivo() {
 		return getStatus() == Status.A;
 	}
+	
 	
 }

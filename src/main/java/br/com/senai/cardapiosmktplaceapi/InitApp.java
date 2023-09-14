@@ -50,15 +50,6 @@ public class InitApp {
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
-			Opcao opcao = new Opcao();
-			opcao.setNome("Teste");
-			opcao.setDescricao("Descricao");
-			opcao.setPercentualDeDesconto(BigDecimal.TEN);
-			opcao.setPromocao(Confirmacao.S);
-			opcao.setStatus(Status.A);
-			opcao.setCategoria(categoriasRepository.findById(45).get());
-			opcao.setRestaurante(restaurantesRepository.findById(10).get());
-			opcoesRepository.save(opcao);
 			System.out.println("subiu");
 		};
 	}
