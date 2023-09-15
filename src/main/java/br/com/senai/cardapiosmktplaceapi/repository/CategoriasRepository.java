@@ -15,6 +15,10 @@ import br.com.senai.cardapiosmktplaceapi.entity.enums.TipoDeCategoria;
 @Repository
 public interface CategoriasRepository extends JpaRepository<Categoria, Integer>{
 	
+	
+	@Query(value = "SELECT c FROM Categoria c WHERE c.id = :id")
+	public Categoria buscarPor(Integer id);
+	
 	@Query(value = "SELECT c FROM Categoria c "
 			+ "WHERE Upper(c.nome) LIKE Upper(:nome) "
 			+ "AND c.status = :status "

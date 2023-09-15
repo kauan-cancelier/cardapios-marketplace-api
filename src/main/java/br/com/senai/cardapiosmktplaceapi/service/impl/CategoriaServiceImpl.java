@@ -49,7 +49,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 
 	@Override
 	public Categoria buscarPor(Integer id) {
-		Categoria categoriaEncontrada = categoriaRepository.findById(id).get();
+		Categoria categoriaEncontrada = categoriaRepository.buscarPor(id);
 		Preconditions.checkNotNull(categoriaEncontrada, "Não foi encontrada nenhuma categoria com o id informado. ");
 		Preconditions.checkArgument(categoriaEncontrada.isAtiva(), "A categoria está inativa");
 		return categoriaRepository.findById(id).get();
