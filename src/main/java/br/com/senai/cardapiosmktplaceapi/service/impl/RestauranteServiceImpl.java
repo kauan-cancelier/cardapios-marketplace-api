@@ -33,7 +33,7 @@ public class RestauranteServiceImpl implements RestauranteService{
 	public Restaurante salvar(Restaurante restaurante) {
 		Restaurante restauranteEncontrado = restaurantesRepository.buscarPor(restaurante.getNome());
 		if (restauranteEncontrado != null) {
-			if (restaurante.isPersistido()) {
+			if (restauranteEncontrado.isPersistido()) {
 				Preconditions.checkArgument(restauranteEncontrado.equals(restaurante), "O nome do restaurante já está em uso");
 			}
 		}
