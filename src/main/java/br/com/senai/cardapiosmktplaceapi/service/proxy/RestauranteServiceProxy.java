@@ -15,7 +15,7 @@ import br.com.senai.cardapiosmktplaceapi.service.RestauranteService;
 public class RestauranteServiceProxy implements RestauranteService{
 	
 	@Autowired
-	@Qualifier("restauranteServiceImp")
+	@Qualifier("restauranteServiceImpl")
 	private RestauranteService restauranteService;
 
 	@Override
