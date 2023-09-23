@@ -36,7 +36,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 
 	@Override
 	public void atualizarStatusPor(Integer id, Status status) {
-		Categoria categoriaEncontrada = categoriaRepository.findById(id).get();
+		Categoria categoriaEncontrada = categoriaRepository.buscarPor(id);
 		Preconditions.checkNotNull(categoriaEncontrada, "Nenhuma categoria foi encontrada com o id informado. ");
 		Preconditions.checkArgument(categoriaEncontrada.getStatus() != status, "O status já está salvo para a categoria. ");
 		categoriaRepository.atualizarPor(id, status);
