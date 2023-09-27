@@ -23,6 +23,12 @@ public interface OpcaoService {
 			@Positive(message = "O id para exclusão deve ser positivo")
 			Integer id);
 	
+	
+	public Opcao buscarPor(
+			@NotNull(message = "A opcão é obrigatória para busca. ")
+			@Positive(message = "O id deve ser positivo para busca. ")
+			Integer id);
+	
 	public void atualizarStatusPor(
 			@NotNull(message = "O id é obrigatório. ")
 			@Positive(message = "O id para atualização deve conter um valor positivo. ")
