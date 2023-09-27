@@ -84,5 +84,10 @@ public class OpcaoDoCardapio {
 		return getStatus() == Status.A;
 	}
 	
+	@Transient
+	public boolean isEmPromocao() {
+		return getRecomendado() == Confirmacao.S;
+	}
+	
 	
 }
