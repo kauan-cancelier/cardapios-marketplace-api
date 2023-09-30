@@ -44,8 +44,8 @@ public class ApiSecurityConfig {
 	public AuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
 		authenticationProvider.setUserDetailsService(credencialDeAcessoServiceImpl);
-		authenticationProvider.setPasswordEncoder(passwordEnconder());;
-		return authenticationProvider();
+		authenticationProvider.setPasswordEncoder(passwordEnconder());
+		return authenticationProvider;
 	}
 	
 	private UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource() {
@@ -69,13 +69,13 @@ public class ApiSecurityConfig {
 				.requestMatchers(HttpMethod.POST, "/cardapios/**")
 					.hasAnyAuthority("LOJISTA")
 				.requestMatchers(HttpMethod.PUT, "/cardapios/**")
-					.hasAnyAuthority("LOGISTA")
+					.hasAnyAuthority("LOJISTA")
 				.requestMatchers(HttpMethod.PATCH, "/cardapios/**")
-					.hasAnyAuthority("LOGISTA")
+					.hasAnyAuthority("LOJISTA")
 				.requestMatchers("/cardapios/**")
-					.hasAnyAuthority("CLIENTE", "LOGISTA")
+					.hasAnyAuthority("CLIENTE", "LOJISTA")
 				.requestMatchers("/categorias/**")
-					.hasAnyAuthority("LOGISTA")
+					.hasAnyAuthority("LOJISTA")
 				.anyRequest().authenticated())
 		.sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 		.authenticationProvider(authenticationProvider()).addFilterBefore(filtroDeAutenticacaoJwt,

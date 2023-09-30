@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class FiltroDeAutenticacaoJwt extends OncePerRequestFilter {
 
 	@Autowired
-	private GerenciadoDeTokenJwt gerenciadorDeToken;
+	private GerenciadorDeTokenJwt gerenciadorDeToken;
 	
 	@Autowired
 	private CredencialDeAcessoServiceImpl service;

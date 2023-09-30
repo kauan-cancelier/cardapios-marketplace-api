@@ -15,7 +15,7 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
 @Component
-public class GerenciadoDeTokenJwt {
+public class GerenciadorDeTokenJwt {
 	
 	@Value("${spring.jwt.secret}")
 	private String secret;
