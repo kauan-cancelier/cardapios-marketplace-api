@@ -32,7 +32,7 @@ public interface CategoriaService {
 			String nome, 
 			@NotNull(message = "O status é obrigatório")
 			Status status,
-			@NotBlank(message = "O tipo da categoria é obrigatório")
+			@NotNull(message = "O tipo da categoria é obrigatório")
 			TipoDeCategoria tipo, 
 			Pageable pageable);
 	
